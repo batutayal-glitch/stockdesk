@@ -10,3 +10,6 @@
 .report-table { overflow-x: auto; margin: 1rem 0; }
 .report-table table { width: max-content; min-width: 100%; }
 .report-table th, .report-table td { max-width: 20rem; white-space: normal; }
+
+/* 資料日期與快照說明移到頁面最下方 */
+.data-footer{margin-top:32px;padding-top:20px;border-top:1px solid rgba(127,127,127,.25)}

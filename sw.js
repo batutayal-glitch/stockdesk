@@ -1,5 +1,5 @@
 /* Cache only the application shell. Never cache API data or sign-in routes. */
-const CACHE='stockdesk-shell-v6';
+const CACHE='stockdesk-shell-v7';
 const ASSETS=['./','./index.html','./style.css','./engine.js','./app.js','./reports.js','./week-data.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 /* 每日更新的資料檔：一律繞過瀏覽器 HTTP 快取，直接向伺服器要最新版 */
 const FRESH=['./week-data.js'];
