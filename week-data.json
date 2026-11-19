@@ -1,23 +1,12 @@
 {
  "version": 1,
  "demo": false,
- "snapshot_id": "auto-20261119-2308",
- "retrieved_at": "2026-11-19T23:08:08.817027+08:00",
- "week_start": "2026-06-22",
+ "snapshot_id": "auto-20261120-0610",
+ "retrieved_at": "2026-11-20T06:10:00.505813+08:00",
+ "week_start": "2026-06-23",
  "week_end": "2026-11-19",
  "preferred_date": "2026-11-19",
  "coverage": {
-  "2026-06-22": {
-   "close": 12,
-   "volume": 12,
-   "foreign": 0,
-   "trust": 0,
-   "dealer": 0,
-   "margin": 0,
-   "short": 0,
-   "benchmark": 9,
-   "approximate": 0
-  },
   "2026-06-23": {
    "close": 12,
    "volume": 12,
@@ -1148,132 +1137,6 @@
   "重大事件需人工查核，未自動填入。"
  ],
  "records": [
-  {
-   "code": "1608",
-   "date": "2026-06-22",
-   "close": 35.2,
-   "volume": 4031,
-   "source": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260601&stockNo=1608&response=json",
-   "benchmark": 47741.51,
-   "benchmark_source": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20260601&response=json",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "1802",
-   "date": "2026-06-22",
-   "close": 76.6,
-   "volume": 172734,
-   "source": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260601&stockNo=1802&response=json",
-   "benchmark": 47741.51,
-   "benchmark_source": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20260601&response=json",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "1815",
-   "date": "2026-06-22",
-   "close": 106.5,
-   "volume": 53562,
-   "source": "https://www.tpex.org.tw/zh-tw/mainboard/trading/info/stock-pricing.html?code=1815",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "2344",
-   "date": "2026-06-22",
-   "close": 222.0,
-   "volume": 403195,
-   "source": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260601&stockNo=2344&response=json",
-   "benchmark": 47741.51,
-   "benchmark_source": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20260601&response=json",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "2408",
-   "date": "2026-06-22",
-   "close": 505.0,
-   "volume": 96420,
-   "source": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260601&stockNo=2408&response=json",
-   "benchmark": 47741.51,
-   "benchmark_source": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20260601&response=json",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "2481",
-   "date": "2026-06-22",
-   "close": 176.0,
-   "volume": 4035,
-   "source": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260601&stockNo=2481&response=json",
-   "benchmark": 47741.51,
-   "benchmark_source": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20260601&response=json",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "2492",
-   "date": "2026-06-22",
-   "close": 617.0,
-   "volume": 20258,
-   "source": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260601&stockNo=2492&response=json",
-   "benchmark": 47741.51,
-   "benchmark_source": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20260601&response=json",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "3006",
-   "date": "2026-06-22",
-   "close": 254.0,
-   "volume": 17000,
-   "source": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260601&stockNo=3006&response=json",
-   "benchmark": 47741.51,
-   "benchmark_source": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20260601&response=json",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "3311",
-   "date": "2026-06-22",
-   "close": 40.25,
-   "volume": 2254,
-   "source": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260601&stockNo=3311&response=json",
-   "benchmark": 47741.51,
-   "benchmark_source": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20260601&response=json",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "3441",
-   "date": "2026-06-22",
-   "close": 86.6,
-   "volume": 3253,
-   "source": "https://www.tpex.org.tw/zh-tw/mainboard/trading/info/stock-pricing.html?code=3441",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "6147",
-   "date": "2026-06-22",
-   "close": 277.0,
-   "volume": 10553,
-   "source": "https://www.tpex.org.tw/zh-tw/mainboard/trading/info/stock-pricing.html?code=6147",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
-  {
-   "code": "6949",
-   "date": "2026-06-22",
-   "close": 886.0,
-   "volume": 295,
-   "source": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260601&stockNo=6949&response=json",
-   "benchmark": 47741.51,
-   "benchmark_source": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=20260601&response=json",
-   "precision_fields": "none",
-   "precision_note": "數量單位為張（官方股數除以 1,000 四捨五入）。"
-  },
   {
    "code": "1608",
    "date": "2026-06-23",
