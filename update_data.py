@@ -88,8 +88,10 @@ def num(s):
 
 
 def roc_to_iso(s):
-    y, m, d = re.split(r"[/\-]", s.strip())
-    return f"{int(y) + 1911:04d}-{int(m):02d}-{int(d):02d}"
+    y, m, d = (int(x) for x in re.split(r"[/\-]", s.strip()))
+    if y < 1911:  # 民國年；櫃買指數等部分來源已改用西元年
+        y += 1911
+    return f"{y:04d}-{m:02d}-{d:02d}"
 
 
 def ymd(d):
@@ -440,6 +442,9 @@ def main():
     price_start = today - dt.timedelta(days=args.price_days)
     if last_dates:  # 增量：只重抓最近 1 個月（月資料便宜，順便修正調帳）
         price_start = max(price_start, dt.date.fromisoformat(last_dates[-1]) - dt.timedelta(days=31))
+        gaps = [d for (c, d), r in rows.items() if "benchmark" not in r and d >= price_start.isoformat()]
+        if gaps:  # 指數有缺就從最早缺的那天重抓
+            price_start = min(price_start, dt.date.fromisoformat(min(gaps)))
     log(f"價量／指數：{price_start} ～ {today}")
     fetch_prices(price_start, today, rows)
     apply_bench(rows)
