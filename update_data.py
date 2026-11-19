@@ -373,6 +373,9 @@ FIELDS = ["code", "date", "close", "volume", "source", "foreign", "trust", "deal
           "revenue_source", "precision_fields", "precision_note"]
 
 
+LOT_FIELDS = ("volume", "foreign", "trust", "dealer", "margin", "short")
+
+
 def write_outputs(rows, today, keep_days):
     cutoff = (today - dt.timedelta(days=keep_days)).isoformat()
     recs = []
@@ -380,9 +383,12 @@ def write_outputs(rows, today, keep_days):
         if d < cutoff or d > today.isoformat() or not rec.get("close") or "source" not in rec:
             continue
         out = {"code": code, "date": d, **{k: rec[k] for k in FIELDS[2:] if k in rec}}
-        if not out.get("precision_fields"):
-            # 網站會把新舊資料合併；明確標示「none」才能蓋掉舊快照留在手機裡的約數標記
-            out["precision_fields"], out["precision_note"] = "none", "官方精確值。"
+        # 網站一律以「張」為單位：history.json 內部存股數，輸出時換算成整數張
+        for k in LOT_FIELDS:
+            if k in out:
+                out[k] = round(out[k] / 1000)
+        # 網站會把新舊資料合併；明確標示「none」才能蓋掉舊快照留在手機裡的約數標記
+        out["precision_fields"], out["precision_note"] = "none", "數量單位為張（官方股數除以 1,000 四捨五入）。"
         recs.append(out)
     dates = sorted({r["date"] for r in recs})
     cov = {}
@@ -404,7 +410,7 @@ def write_outputs(rows, today, keep_days):
         "preferred_date": latest_full,
         "coverage": cov,
         "notes": ["由 update_data.py 自動抓取 TWSE/TPEx/TDCC/MOPS 官方資料產生。",
-                  "上櫃個股成交量以張換算股數，標示為約數。",
+                  "成交量、法人買賣超、融資餘額、借券賣出餘額一律以「張」為單位。",
                   "集保 400 張以上持股比例每週累積，需連續 3 週才會亮燈。",
                   "重大事件需人工查核，未自動填入。"] + [f"本次警告：{m}" for m in LOG if "失敗" in m][:20],
         "records": recs,
