@@ -5,6 +5,10 @@ on:
     # 台灣時間週一至週五 22:13（UTC 14:13）；融資融券、借券資料約晚上 9 點後才齊
     - cron: "13 14 * * 1-5"
   workflow_dispatch: {}
+  # 修改抓資料腳本（例如增減觀察個股）時立即重跑一次
+  push:
+    branches: [main]
+    paths: [update_data.py]
 
 permissions:
   contents: write

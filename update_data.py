@@ -26,8 +26,9 @@ HIST_PATH = os.path.join(HERE, "data", "history.json")
 # 與 engine.js 的 WATCH 清單一致；market: TWSE=上市（含創新板）, TPEX=上櫃
 WATCH = [
     ("2408", "TWSE"), ("2344", "TWSE"), ("3006", "TWSE"), ("6949", "TWSE"),
-    ("1608", "TWSE"), ("6147", "TPEX"), ("1802", "TWSE"), ("2492", "TWSE"),
+    ("6147", "TPEX"), ("1802", "TWSE"), ("2492", "TWSE"),
     ("2481", "TWSE"), ("1815", "TPEX"), ("3441", "TPEX"), ("3311", "TWSE"),
+    ("8358", "TPEX"), ("1785", "TPEX"), ("4979", "TPEX"),
 ]
 CODES = {c for c, _ in WATCH}
 MARKET = dict(WATCH)
@@ -444,7 +445,10 @@ def main():
     hist = json.load(open(HIST_PATH, encoding="utf-8")) if os.path.exists(HIST_PATH) else {}
     rows = {tuple(k.split("|")): v for k, v in hist.get("rows", {}).items()}
 
+    rows = {k: v for k, v in rows.items() if k[0] in CODES}  # 移出清單的個股不再輸出
     last_dates = sorted({d for _, d in rows})
+    if CODES - {c for c, _ in rows}:  # 有新加入的個股：完整回補
+        last_dates = []
     price_start = today - dt.timedelta(days=args.price_days)
     if last_dates:  # 增量：只重抓最近 1 個月（月資料便宜，順便修正調帳）
         price_start = max(price_start, dt.date.fromisoformat(last_dates[-1]) - dt.timedelta(days=31))
